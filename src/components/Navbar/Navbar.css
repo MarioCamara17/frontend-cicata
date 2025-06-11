@@ -1,0 +1,15 @@
+.navbar {
+  background-color: #1e3a8a;
+  padding: 1rem;
+  color: white;
+}
+.navbar-menu {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
