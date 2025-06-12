@@ -1,15 +1,26 @@
 .navbar {
-  background-color: #1e3a8a;
+  background-color: #1e3a8a; /* Azul institucional */
   padding: 1rem;
   color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .navbar-menu {
   display: flex;
   justify-content: space-around;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.navbar-menu a {
+.navbar-menu li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease;
 }
+.navbar-menu li a:hover {
+  background-color: #3b5998;
+  border-radius: 5px;
+}
+
