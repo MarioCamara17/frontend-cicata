@@ -10,6 +10,7 @@ export default function Navbar() {
         <li><Link to="/reservas">Reservas</Link></li>
         <li><Link to="/eventos">Eventos</Link></li>
         <li><Link to="/">Salir</Link></li>
+        <li><Link to="inicio">Inicio</Link></li>
       </ul>
     </nav>
   );
