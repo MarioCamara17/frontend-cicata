@@ -1,0 +1,70 @@
+.layout-container {
+  background-color: #f3f4f6; /* gris claro */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.titulo-institucion h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.titulo-institucion p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.franja-centro {
+  background-color: #4B5563; /* gris oscuro */
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.layout-body {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content-panel {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 1000px;
+}
+
+.layout-footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
