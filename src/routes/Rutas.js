@@ -7,6 +7,7 @@ import Home from "../screens/Home";
 import Registro from "../pages/Registro";
 import Login from "../pages/Login";
 import { Layout } from "../components/Layout/Layout";
+import { Inicio } from "../pages/Inicio";
 
 export function Rutas() {
   return (
@@ -23,6 +24,7 @@ export function Rutas() {
       {/* Rutas que no usan el layout */}
       <Route path="/registro" element={<Registro />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/Inicio"element={<Inicio />} />
     </Routes>
   );
 }

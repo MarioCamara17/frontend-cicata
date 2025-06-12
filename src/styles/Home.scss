@@ -1,0 +1,99 @@
+// General body + root styles
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+// Main layout
+.layout-body, .content-panel {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100%;
+  width: 100%;
+}
+
+// Background container
+.home-bg {
+  position: fixed;
+  top: 90px; // Ajusta este valor a la suma de la altura del header + franja-centro
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 90px); // Igual que el top, para cubrir el resto de la pantalla
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/fablab.jpg');
+  background-size: 1550px 555px;
+  background-position: 50% 99%; // 🎯 desplazamiento fino hacia arriba
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+// Panel with content
+.home-panel {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 60px 20px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.7);
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px #000;
+  }
+}
+
+// Buttons section
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+// Buttons styles
+.btn {
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+
+  &.blue {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  &.green {
+    background: #22c55e;
+    color: #fff;
+  }
+
+  &:hover {
+    background: #fff;
+    color: #222;
+  }
+}
+ footer {
+  position: fixed;     /* Para que siempre quede visible */
+  bottom: 0;           /* Pegado al borde inferior */
+  left: 0;
+  width: 100%;         /* Que ocupe todo el ancho */
+  z-index: 10;         /* Que esté por encima de .home-bg que tiene z-index: 0 */
+  background-color: rgba(0,0,0,0.7); /* Fondo semitransparente para que se vea sobre la imagen */
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+

@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function Registro() {
   const [form, setForm] = useState({
     correo: '',
     contrasena: '',
     confirmar: '',
+    telefono: '',
     rol: 'Estudiante',
   });
 
@@ -24,55 +27,82 @@ export default function Registro() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
-      <div className="bg-white p-6 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-4">Crear Cuenta Nueva</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="email"
-            name="correo"
-            placeholder="Correo electrónico"
-            className="w-full border p-2 rounded"
-            value={form.correo}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="contrasena"
-            placeholder="Contraseña"
-            className="w-full border p-2 rounded"
-            value={form.contrasena}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="confirmar"
-            placeholder="Confirmar contraseña"
-            className="w-full border p-2 rounded"
-            value={form.confirmar}
-            onChange={handleChange}
-            required
-          />
-
-          <select
-            name="rol"
-            className="w-full border p-2 rounded"
-            value={form.rol}
-            onChange={handleChange}
-          >
-            <option>Estudiante</option>
-            <option>Visitante / Externo</option>
-            <option>Empresario</option>
-            <option>Instructor</option>
-            <option>Profesor</option>
-            <option>Administrador</option>
-          </select>
-
+    <div className="container min-vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
+      <div className="card shadow-lg p-4" style={{ maxWidth: 420, width: '100%' }}>
+        <h2 className="text-center mb-4 fw-bold">Crear Cuenta Nueva</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="correo" className="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              className="form-control"
+              placeholder="Correo electrónico"
+              value={form.correo}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="contrasena" className="form-label">Contraseña</label>
+            <input
+              type="password"
+              name="contrasena"
+              id="contrasena"
+              className="form-control"
+              placeholder="Contraseña"
+              value={form.contrasena}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="confirmar" className="form-label">Confirmar contraseña</label>
+            <input
+              type="password"
+              name="confirmar"
+              id="confirmar"
+              className="form-control"
+              placeholder="Confirmar contraseña"
+              value={form.confirmar}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="telefono" className="form-label">Número de teléfono</label>
+            <input
+              type="tel"
+              name="telefono"
+              id="telefono"
+              className="form-control"
+              placeholder="Número de teléfono"
+              value={form.telefono}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="rol" className="form-label">Rol</label>
+            <select
+              name="rol"
+              id="rol"
+              className="form-select"
+              value={form.rol}
+              onChange={handleChange}
+            >
+              <option>Estudiante</option>
+              <option>Visitante / Externo</option>
+              <option>Empresario</option>
+              <option>Instructor</option>
+              <option>Profesor</option>
+              <option>Administrador</option>
+            </select>
+          </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+            className="btn btn-primary w-100 fw-bold"
           >
             Registrarse
           </button>
