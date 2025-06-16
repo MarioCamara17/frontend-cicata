@@ -20,10 +20,10 @@ export function Layout() {
         </div>
       </header>
 
-      {/* Contenido principal */}
+      {/* Contenido principal con scroll solo aquí */}
       <main className="layout-body">
         <div className="content-panel">
-          <Outlet /> {/* Aquí se renderizan las rutas hijas como Home */}
+          <Outlet /> {/* Aquí se renderiza AgendaVisita */}
         </div>
       </main>
 

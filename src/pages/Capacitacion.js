@@ -1,32 +1,36 @@
 import React from 'react';
 
-const capacitaciones = [
-  {
-    titulo: "Programación en Arduino",
-    fecha: "11 al 15 de julio de 2022",
-    horario: "Lunes 10-14, Martes a Viernes 8:30-12:30",
-    instructores: "Dr. Francisco Ornelas",
-    materiales: ["video1.mp4", "tutorial1.pdf"]
-  }
-];
-
 export default function Capacitacion() {
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Capacitaciones</h2>
-      {capacitaciones.map((cap, index) => (
-        <div key={index} className="border p-4 rounded shadow mb-4">
-          <h3 className="font-semibold">{cap.titulo}</h3>
-          <p><strong>Fecha:</strong> {cap.fecha}</p>
-          <p><strong>Horario:</strong> {cap.horario}</p>
-          <p><strong>Instructor:</strong> {cap.instructores}</p>
-          <ul className="mt-2 list-disc pl-5">
-            {cap.materiales.map((mat, i) => (
-              <li key={i}>{mat}</li>
-            ))}
-          </ul>
+      <h2 className="text-xl font-bold mb-6">Capacitaciones</h2>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ width: '100%', maxWidth: 600 }}>
+          <h3 className="mb-3" style={{ fontSize: '1.3rem', textAlign: 'center' }}>
+            Tutorial para usar Impresora 3D
+          </h3>
+          <video
+            src="/Impresora.mp4"
+            controls
+            style={{ width: '100%', borderRadius: 12, background: '#000' }}
+          >
+            Tu navegador no soporta el elemento de video.
+          </video>
         </div>
-      ))}
+        <div style={{ width: '100%', maxWidth: 600 }}>
+          <h3 className="mb-3" style={{ fontSize: '1.3rem', textAlign: 'center' }}>
+            Tutorial para usar Cortadora Láser
+          </h3>
+          <video
+            src="/Cortadora.mp4"
+            controls
+            style={{ width: '100%', borderRadius: 12, background: '#000' }}
+          >
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
     </div>
   );
 }
