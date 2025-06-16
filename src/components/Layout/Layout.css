@@ -1,14 +1,23 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; /* Permite scroll global si algún hijo lo necesita */
+}
+
 .layout-container {
-  background-color: #f3f4f6; /* gris claro */
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f3f4f6;
 }
 
 .layout-header {
   background-color: white;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 4px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
 }
 
 .header-content {
@@ -36,7 +45,7 @@
 }
 
 .franja-centro {
-  background-color: #4B5563; /* gris oscuro */
+  background-color: #4B5563;
   color: white;
   text-align: center;
   padding: 8px;
@@ -47,18 +56,22 @@
 
 .layout-body {
   flex: 1;
+  min-height: 0;
+  overflow-y: auto; /* Scroll SOLO aquí */
   display: flex;
   justify-content: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 2rem 0;
 }
 
 .content-panel {
   background-color: white;
-  padding: 30px;
-  border-radius: 8px;
+  padding: 40px;
+  border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
+  height: auto;
 }
 
 .layout-footer {
@@ -67,12 +80,4 @@
   text-align: center;
   padding: 10px;
   font-size: 12px;
-}
-
-.layout-body {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  overflow-y: auto; /* <--- Agrega esto */
 }

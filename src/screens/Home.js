@@ -1,9 +1,23 @@
 import { Link } from 'react-router-dom';
+import fondo from '../assets/fablab.jpg'; // Importa la imagen
 import '../styles/Home.scss';
 
 export default function Home() {
   return (
-    <div className="home-bg">
+    <div
+      className="home-bg"
+      style={{
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <div className="home-panel">
         <h2>
           Laboratorio de Sistemas Autónomos Ligeros

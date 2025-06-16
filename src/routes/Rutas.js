@@ -8,6 +8,8 @@ import Registro from "../pages/Registro";
 import Login from "../pages/Login";
 import { Layout } from "../components/Layout/Layout";
 import { Inicio } from "../pages/Inicio";
+import AgendaVisita from "../pages/AgendaVisita";
+import Catalogo from "../pages/Catalogo";
 
 export function Rutas() {
   return (
@@ -19,6 +21,8 @@ export function Rutas() {
         <Route path="/capacitacion" element={<Capacitacion />} />
         <Route path="/disponibilidad" element={<ConsultaDisponibilidad />} />
         <Route path="/reportes" element={<Reportes />} />
+        <Route path="/agenda" element={<AgendaVisita />} />
+        <Route path="/Catalogo" element={<Catalogo />} />
       </Route>
 
       {/* Rutas que no usan el layout */}

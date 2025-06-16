@@ -27,7 +27,8 @@ export default function Registro() {
   };
 
   return (
-    <div className="container min-vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
+    <div className="container w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-light">
+
       <div className="card shadow-lg p-4" style={{ maxWidth: 420, width: '100%' }}>
         <h2 className="text-center mb-4 fw-bold">Crear Cuenta Nueva</h2>
         <form onSubmit={handleSubmit}>
