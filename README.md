@@ -6,13 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 🎥 Videos de demostración
 
-- 📹 Video 1 – [Ver en Google Drive](https://drive.google.com/file/d/1Yicli5ZWTK1XIL45LMtUwZ6-OgidFluF/view?usp=drive_link)  
-  🔗 Enlace directo: [https://drive.google.com/uc?id=1Yicli5ZWTK1XIL45LMtUwZ6-OgidFluF](https://drive.google.com/uc?id=1Yicli5ZWTK1XIL45LMtUwZ6-OgidFluF)
-
-- 📹 Video 2 – [Ver en Google Drive](https://drive.google.com/file/d/1eJ8whlfnJC8I8x5hqLGQAaNIDBSLK6jq/view?usp=drive_link)  
-  🔗 Enlace directo: [https://drive.google.com/uc?id=1eJ8whlfnJC8I8x5hqLGQAaNIDBSLK6jq](https://drive.google.com/uc?id=1eJ8whlfnJC8I8x5hqLGQAaNIDBSLK6jq)
-
----
 
 ## Available Scripts
 
