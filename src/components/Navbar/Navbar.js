@@ -11,6 +11,7 @@ export default function Navbar() {
         <li><Link to="/eventos">Eventos</Link></li>
         <li><Link to="/">Salir</Link></li>
         <li><Link to="inicio">Inicio</Link></li>
+        <li><Link to="/AdmonEquipos">Administrar Equipos</Link></li>
       </ul>
     </nav>
   );
