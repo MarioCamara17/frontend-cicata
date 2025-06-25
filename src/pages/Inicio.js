@@ -34,7 +34,7 @@ export function Inicio() {
       </div>
       <div className="row w-100 justify-content-center">
         <div className="col-6 col-md-3 mb-3">
-          <button className="btn btn-info w-100 py-3" style={{ fontSize: "1rem", height: "300px" , width: 120,}} onClick={() => navigate('/AdmonEquipos')}>
+          <button className="btn btn-info w-100 py-3" style={{ fontSize: "1rem", height: "300px" , width: 120,}} onClick={() => navigate('/Catalogo')}>
              <img src="/catalogo.png" alt="Catalogo" style={{ width: 250, height: 250, marginRight: 0}} />
             Catálogo de servicios
           </button>
