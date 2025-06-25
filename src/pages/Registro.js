@@ -1,34 +1,62 @@
-import { useState } from 'react';
-
+import React, { useState } from 'react';
+import API from '../api'; // nuestro cliente Axios
 
 export default function Registro() {
   const [form, setForm] = useState({
-    correo: '',
+    correo:     '',
     contrasena: '',
-    confirmar: '',
-    telefono: '',
-    rol: 'Estudiante',
+    confirmar:  '',
+    telefono:   '',
+    rol:        'Estudiante',
   });
+  const [error, setError] = useState(null);
+
+  // Mapa de nombres de rol a roleId que tu API espera
+  const roleMap = {
+    Administrador:        1,
+    Profesor:             2,
+    Instructor:           3,
+    Empresario:           4,
+    'Visitante / Externo': 5,
+    Estudiante:           6,
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+
     if (form.contrasena !== form.confirmar) {
-      alert('Las contraseñas no coinciden');
+      setError('Las contraseñas no coinciden');
       return;
     }
-    console.log('Datos enviados:', form);
-    // Aquí conectaremos a la API más adelante
+
+    try {
+      await API.post('/Users', {
+        username: form.correo,
+        email:    form.correo,
+        password: form.contrasena,
+        roleId:   roleMap[form.rol] || 6
+      });
+      alert('Registro exitoso. Ahora puedes iniciar sesión.');
+      window.location.href = '/login';
+    } catch (err) {
+      console.error('Error al registrar:', err);
+      setError('No se pudo completar el registro');
+    }
   };
 
   return (
     <div className="container min-vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
       <div className="card shadow-lg p-4" style={{ maxWidth: 420, width: '100%' }}>
         <h2 className="text-center mb-4 fw-bold">Crear Cuenta Nueva</h2>
+
+        {error && <div className="alert alert-danger">{error}</div>}
+
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="correo" className="form-label">Correo electrónico</label>
@@ -43,6 +71,7 @@ export default function Registro() {
               required
             />
           </div>
+
           <div className="mb-3">
             <label htmlFor="contrasena" className="form-label">Contraseña</label>
             <input
@@ -56,6 +85,7 @@ export default function Registro() {
               required
             />
           </div>
+
           <div className="mb-3">
             <label htmlFor="confirmar" className="form-label">Confirmar contraseña</label>
             <input
@@ -69,6 +99,7 @@ export default function Registro() {
               required
             />
           </div>
+
           <div className="mb-3">
             <label htmlFor="telefono" className="form-label">Número de teléfono</label>
             <input
@@ -79,9 +110,9 @@ export default function Registro() {
               placeholder="Número de teléfono"
               value={form.telefono}
               onChange={handleChange}
-              required
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="rol" className="form-label">Rol</label>
             <select
@@ -99,10 +130,8 @@ export default function Registro() {
               <option>Administrador</option>
             </select>
           </div>
-          <button
-            type="submit"
-            className="btn btn-primary w-100 fw-bold"
-          >
+
+          <button type="submit" className="btn btn-primary w-100 fw-bold">
             Registrarse
           </button>
         </form>
